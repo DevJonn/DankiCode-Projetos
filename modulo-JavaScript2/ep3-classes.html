@@ -1,6 +1,70 @@
 <html>
     <body>
         <script>
+
+            class Animal{
+                constructor(nome){
+                    this.nome = nome;
+                }
+                printNome(){
+                return this.nome;
+                } 
+            }  
+
+            class Cachorro extends Animal{
+                constructor(nome){
+                    super(nome);
+                    this.raca = 'bulldog';
+                }
+
+            PrintRaca(){
+                return this.raca;
+                }
+            }
+
+            
+
+            cachorro = new Cachorro('Rocky');
+
+            alert(cachorro.printNome());
+
+
+
+
+
+
+
+
+
+            //2º Método
+            /*class Animal{
+                constructor(nome){
+                    this.nome = nome;
+                }
+            }
+
+            animal = new Animal('Cachorro');
+
+            alert(animal.nome);
+            */ 
+            
+        
+            //1ºMétodo:
+            /*class Animal{
+                constructor(){
+                    this.nome = 'cachorro';
+                }
+            }
+
+            animal = new Animal();
+
+            alert(animal.nome);
+            */ 
+
+
+
+
+
             
         </script>
     </body>
