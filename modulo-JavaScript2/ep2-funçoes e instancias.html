@@ -1,7 +1,71 @@
 <html>
     <body>
         <script>
+
+            function Pessoa(){
+                this.nome = 'Jonathan';
+                this.idade = 23;
+                this.printNome = function(numero){
+                    alert(numero);
+                };
+                this.returnAnimal = function(animal){
+                    return animal;
+                }
+            }
+
+            function Animal(){
+                this.nome = 'cachorro';
+                this.raca = 'Bulldog';
+            }
+
+            var pessoa = new Pessoa();
+
+            var animal = new Animal();
+
+            animal.raca = 'Maltes';
+
+            alert(pessoa.returnAnimal(animal).raca);
+
+
+
+
+
+
+
+
+
+
+            /*function Animal(nome,peso){
+                if(nome == undefined){
+                    nome = 'Cachorro';
+                }
+
+                if(peso == undefined){
+                    peso = '5kg';
+                }
+                this.nome = nome;
+                this.peso = peso;
+            }
+
+            animal = new Animal('Gato');
+
+            alert(animal.nome)
+            */ 
             
+            
+            /*animal = new Animal('Cachorro','12kg');
+
+            animal2 = new Animal('Gato','6kg');
+
+            alert(animal.peso);
+
+            alert(animal2.peso);
+            */ 
+
+
+
+
+
         </script>
     </body>
 </html>
