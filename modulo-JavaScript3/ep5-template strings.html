@@ -1,7 +1,70 @@
 <html>
     <body>
         <script>
-            
+
+            //Spread
+            var nomes = [
+                {
+                    nome:'Jon'
+                },
+                {
+                    nome:'Joao'
+                }
+            ]
+                const objetos = [...nomes,{
+                    nome:'Joaquim'
+                }];
+
+                console.log(objetos);
+
+
+            //Declarando Arrays: Modo Tradicional:
+            /*const arr = ['Jon','Joao','Joaquim'];
+            alert(arr[0]);
+            */ 
+            //Declarando Arrays: Destructure = Moderno
+            /*const arr = ['Jon','Joao','Joaquim'];
+            const [a,b,c] = arr;
+            alert(a);
+            */ 
+
+            /*
+             //arrow functions: Modo moderno de declarar funções.
+            const testes = ()=>{
+                alert('Olá mundo!');
+            }
+            testes();
+             //Forma antiga para funções:
+            function testes(){
+            }
+            */ 
+
+            /*
+            //Block scopes:
+            {
+                //vai ficar defiinido neste scopo.
+                //dentro do scopo só funciona a variavel 'let', var só funciona fora do scopo.
+                let nome = 'jon';
+
+                let testes = function (){
+                    console.log('Olá');
+                }
+
+                testes();
+            }
+            */ 
+
+            /* Template String =
+            var nome = 'Jon';
+            var conteudo = `O nome é ${nome}`;
+            console.log(conteudo);
+            */
+            /*Template String= Feito para invocar a variavel, selecionando todo o conteudo, mesmo quebrando a linha dentro do conteudo. Utiliza-se a crase ``;
+            var conteudo = `
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id velit et nisi ultricies euismod. Suspendisse efficitur molestie tortor eu consequat. Aliquam vitae venenatis massa. Fusce a consectetur felis. Praesent porta orci sem, et iaculis mauris rutrum vulputate. Nulla quis orci a metus rhoncus interdum vitae maximus dolor. Ut non lacus eleifend, lacinia arcu vitae, laoreet nibh. Proin a ultrices nibh, et ultrices lectus. In hac habitasse platea dictumst. Vestibulum interdum lorem eget nunc efficitur tempus. Maecenas nec faucibus nulla. Phasellus nec turpis eget dui pellentesque mattis. Donec tincidunt aliquam ex non pellentesque. Vivamus posuere fringilla ex, sit amet rhoncus neque hendrerit eu. Sed ornare dui sapien, quis fermentum mi porttitor id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            `;
+            console.log(conteudo);
+            */ 
         </script>
     </body>
 </html>
