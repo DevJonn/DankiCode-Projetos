@@ -15,13 +15,13 @@
                 var container = document.querySelector('.container');
 
 
-                //exercicio 2
+                
                 //console.log(json);
                 json.results.map(function(val){
                     container.innerHTML+=`
                     
-                        <div class='tituloFilme'>`+val.title+`
-                        <div class='description'>`+val.overview+`</div>
+                        <div style='cursos:pointer;' class='tituloFilme'>`+val.title+`
+                        <div style='display:none;' class='description'>`+val.overview+`</div>
                         <hr>    
 
                     </div>`;
