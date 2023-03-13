@@ -49,12 +49,30 @@
                 .then(response => response.json())
                 .then(allpokemon => {
 
+                    var pokemons =[];
+
                     allpokemon.results.map((val)=>{
-                        console.log(val);
-                    })
-                
+                        pokemons.push({nome:val.name});
+
+
+
+            fetch(val.url)
+                .then(response => response.json())
+                .then(pokemonSingle => {
+                    console.log(pokemonSingle);
+                })
+
+
+
 
                 })
+
+                pokemons.map((val)=>{
+                        console.log(val.nome);
+                })
+                
+
+            })
         </script>
 
 
