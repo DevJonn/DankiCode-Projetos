@@ -45,7 +45,7 @@ body{
     text-align: center;
     padding: 10px 0;
 }
-
+//Push
 @media screen and (max-width:768px){
     .pokemon-box{width:100%;text-align: center;}
     .pokemon-box img{
