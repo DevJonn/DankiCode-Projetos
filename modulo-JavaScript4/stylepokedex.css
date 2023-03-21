@@ -23,6 +23,7 @@ body{
 }
 
 .pokemon-boxes{
+    justify-content: center;
     margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
@@ -45,10 +46,12 @@ body{
     text-align: center;
     padding: 10px 0;
 }
-//Push
-@media screen and (max-width:768px){
-    .pokemon-box{width:100%;text-align: center;}
-    .pokemon-box img{
-        max-width: 300px;
+
+@media screen and (max-width:600px){
+    h2 {
+        font-size: 24px;
+    }
+    .pokemon-box{
+        width: 80%;
     }
 }
