@@ -10,41 +10,11 @@
 
             <div class="pokemon-boxes">
 
-                <div class="pokemon-box">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" >
-                    <p>Dito</p>
                 </div>
-
-            <div class="pokemon-box">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" >
-                    <p>Dito</p>
-                </div>
-
-                
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" >
-                <p>Dito</p>
-            </div>
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" >
-                <p>Dito</p>
-            </div>
-
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" >
-                <p>Dito</p>
-            </div>
-
-            
-            <div class="pokemon-box">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" >
-            <p>Dito</p>
-            </div>
-            </div>
-
         </div>
 
         <script>
+            
             fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
                 .then(response => response.json())
                 .then(allpokemon => {
@@ -61,7 +31,25 @@
 
                                 if(pokemons.length == 10){
                                     //finalizado as requisições
-                                    console.log(pokemons);
+                                    
+
+                                    var pokemonBoxes = document.querySelector('.pokemon-boxes');
+                                    pokemonBoxes.innerHTML = '';
+
+
+                                    pokemons.map(function(val){
+                                    pokemonBoxes.innerHTML+=`
+                                    <div class="pokemon-box">
+                                    <img src="`+val.sprite+`" />
+                                    <p>`+val.nome+`</p>
+                                    </div>
+                                    
+                                    
+                                    `;
+
+
+                                    })
+
                                 }
                             })
                             
@@ -69,12 +57,9 @@
 
                         })
 
-                            pokemons.map((val)=>{
-                                    console.log(val.nome);
-                            })
-                            
 
-                        })
+                    })
+                            
         </script>
 
 
