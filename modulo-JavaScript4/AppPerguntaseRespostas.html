@@ -40,5 +40,26 @@
                 <br/>
             </form>
 
+            <script>
+                var elementos = document.querySelectorAll('[type=radio]');
+
+                for(var i = 0; i < elementos.length; i++){
+                    elementos[i].addEventListener('change',function(e){
+                        let marcado = e.target.value;
+                        if(marcado == 'correta'){
+                            
+                            let el = e.target.previousElementSibling.style.backgroundColor  = 'green';
+
+                        }else if(marcado == 'incorreta'){
+                            let el = e.target.previousElementSibling.style.backgroundColor  = 'red';
+                        }
+                    })
+                }
+                    
+                        
+            
+
+            </script>
+
     </body>
 </html>
