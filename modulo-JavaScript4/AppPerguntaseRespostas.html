@@ -9,15 +9,21 @@
         </div>
 
         <form class="pergunta">
+        <div class="resposta">
             <span>Opção 1</span>
             <input type="radio" name="pergunta1" value="correta" />
             <br/>
+            </div>
+        <div class="resposta">
             <span>Opção 2</span>
             <input type="radio" name="pergunta1" value="incorreta" />
             <br/>
+            </div>
+        <div class="resposta">
             <span>Opção 3</span>
             <input type="radio" name="pergunta1" value="incorreta" />
             <br/>
+            </div>
         </form>
 
         <head>
@@ -29,16 +35,22 @@
             </div>
     
             <form class="pergunta">
-                <span>Opção 1</span>
-                <input type="radio" name="pergunta1" value="correta" />
-                <br/>
-                <span>Opção 2</span>
-                <input type="radio" name="pergunta1" value="incorreta" />
-                <br/>
-                <span>Opção 3</span>
-                <input type="radio" name="pergunta1" value="incorreta" />
-                <br/>
-            </form>
+                <div class="resposta">
+                    <span>Opção 1</span>
+                    <input type="radio" name="pergunta1" value="correta" />
+                    <br/>
+                    </div>
+                <div class="resposta">
+                    <span>Opção 2</span>
+                    <input type="radio" name="pergunta1" value="incorreta" />
+                    <br/>
+                    </div>
+                <div class="resposta">
+                    <span>Opção 3</span>
+                    <input type="radio" name="pergunta1" value="incorreta" />
+                    <br/>
+                    </div>
+                </form>
 
             <script>
                 var elementos = document.querySelectorAll('[type=radio]');
@@ -48,10 +60,28 @@
                         let marcado = e.target.value;
                         if(marcado == 'correta'){
                             
-                            let el = e.target.previousElementSibling.style.backgroundColor  = 'green';
+                        let parentNode = e.target.parentNode;
+                        parentNode.style.backgroundColor = 'green';
+
+                        let els = parentNode.parentNode.querySelectorAll('[type=radio]');
+
+                        for(var n = 0; n < els.length; n++){
+                            els[n].disabled = true;
+                        }
 
                         }else if(marcado == 'incorreta'){
-                            let el = e.target.previousElementSibling.style.backgroundColor  = 'red';
+                            let parentNode = e.target.parentNode;
+                        parentNode.style.backgroundColor = 'red';
+
+                        let els = parentNode.parentNode.querySelectorAll('[type=radio]');
+
+                        for(var n = 0; n < els.length; n++){
+                            els[n].disabled = true;
+                        } 
+
+                        let correta = parentNode.parentNode.querySelector('[value=correta]');
+                        correta.parentNode.style.backgroundColor = 'green';
+
                         }
                     })
                 }
